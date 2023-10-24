@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Department Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let department of departments">
+            <td>{{ department.id }}</td>
+            <td>{{ department.departmentName }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="departmentName">Department Name:</label>
+        <input type="text" class="form-control" formControlName="departmentName">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Department</button>
+</form>
